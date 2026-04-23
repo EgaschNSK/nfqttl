@@ -63,15 +63,15 @@
   ui_print " "
 
   if iptables -t mangle -N nfqttli &&\
-    iptables -t mangle -A nfqttli -j NFQUEUE --queue-num 6464 &&\
+    iptables -t mangle -A nfqttli -j NFQUEUE --queue-num 6565 &&\
     iptables -t mangle -N nfqttlo &&\
-    iptables -t mangle -A nfqttlo -j NFQUEUE --queue-num 6464 &&\
+    iptables -t mangle -A nfqttlo -j NFQUEUE --queue-num 6565 &&\
     iptables -t mangle -A PREROUTING -j nfqttli &&\
     iptables -t mangle -A OUTPUT -j nfqttlo &&\
     ip6tables -t mangle -N nfqttli &&\
-    ip6tables -t mangle -A nfqttli -j NFQUEUE --queue-num 6464 &&\
+    ip6tables -t mangle -A nfqttli -j NFQUEUE --queue-num 6565 &&\
     ip6tables -t mangle -N nfqttlo &&\
-    ip6tables -t mangle -A nfqttlo -j NFQUEUE --queue-num 6464 &&\
+    ip6tables -t mangle -A nfqttlo -j NFQUEUE --queue-num 6565 &&\
     ip6tables -t mangle -A PREROUTING -j nfqttli &&\
     ip6tables -t mangle -A POSTROUTING -j nfqttlo
   then
